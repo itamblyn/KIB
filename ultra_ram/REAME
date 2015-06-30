@@ -1,0 +1,1 @@
+This version of the code is built to store _everything_ in RAM. It is much much faster, but requires large amounts of ram / core (something on the order of 64-128 GB). The makefile is specific to NERSC's big ram machine

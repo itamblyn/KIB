@@ -1,0 +1,7 @@
+To build, go into src and type
+
+make
+
+This should produce exe.x in the parent directory
+
+Everything else is just a script

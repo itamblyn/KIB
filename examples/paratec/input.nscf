@@ -1,0 +1,62 @@
+begin pw_jobs
+  pw_job nonselfcon
+end pw_jobs
+
+accuracy_diag 1e-13
+potential_convergence_criterion 1e-5
+
+mix_method = pulay_tf
+
+output_flags gwc gwscreening wavefn
+gwout_old_format true
+number_kpoints -1 # overrides reduction
+
+begin latticevecs
+  coord 21.24619574011909   0.000000000000000   0.00000000000000
+  coord  0.00000000000000  18.399745250630698   0.00000000000000
+  coord  0.00000000000000   0.000000000000000  86.33708880000000
+end latticevecs
+
+pp_format 3  
+begin pseudopotential
+pp_data   2  3.0 6.0 9.0 0.0  # Pt
+pp_data   3  2.0 4.0 0.0 0.0  # O 
+pp_data   3  1.0 0.0 0.0 0.0  # H
+end pseudopotential
+
+exchange_correlation perdew_burke_ernzerhof               # PBE-GGA
+number_of_spins 1       # non-spin-polarized calculation
+
+energy_cutoff 60 
+submatrix_energy_cutoff 10 
+
+max_iter_scfloop 20
+min_iter_diag 3 
+max_iter_diag_init 15
+
+k_grid 2 2 1 
+k_grid_shift 0.0 0.0 0.0
+
+number_bands 5121 # using .8 gives 4096
+occupy_levels normal
+eigspacefrac 0.8
+
+screening_type previous
+
+begin coordinates
+newtype Pt     0.0
+coord 0.9987977030277473 0.9808646948216109 0.0005558670275933
+.
+.
+.
+newtype O      0.0
+coord 0.2866987789685085 0.3679431435818694 0.6153038310108621 
+.
+.
+.
+newtype H      0.0
+coord 0.3383391382366178 0.4311801721206657 0.6262993223061535 
+.
+.
+.
+end coordinates
